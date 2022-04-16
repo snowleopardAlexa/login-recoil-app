@@ -1,11 +1,17 @@
-import './App.css';
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-    
-    </div>
-  );
-}
+     <RecoilRoot>
+         <h1>recoil</h1>
+     </RecoilRoot>
+  )
+};
 
 export default App;
