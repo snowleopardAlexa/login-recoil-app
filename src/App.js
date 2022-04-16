@@ -1,17 +1,21 @@
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from "recoil";
+import { useEffect } from 'react'
 
 const App = () => {
-  return (
-     <RecoilRoot>
-         <h1>recoil</h1>
-     </RecoilRoot>
-  )
-};
 
-export default App;
+useEffect(() => {
+    const getRepos = async() => {
+        const url = "https:ghapi.huchen.dev/repositories?since=monthly"
+        const resp = await fetch(url)
+        const body = await resp.json()
+        console.log(body)
+    }
+
+    getRepos()
+}, [])    
+
+  return (
+    <div>App</div>
+  )
+}
+
+export default App
